@@ -1,0 +1,33 @@
+<div class = 'container'>
+	<table class = "table-striped table-responsive" style = "width:100%">
+	  	<% @response.each do |x| %>
+
+	  		<% if x['stage']['text'] == "@El Chupacabra" %>
+	  			<thead>
+	  				<th class="active">
+	  					<td colspan=3>
+	  						<h4><%= x['showTime']['text']%></h4>
+	  					</td>
+	  				</th>
+	  			</thead>
+	  			<tbody>
+	  				<tr class='active'>
+	  					<td rowspan=2><img src = "http://www.sasquatchfestival.com/static/ee_images/made/static/ee_images/uploads/artist/<%= x['artist']['text'].titleize.delete " " %>640_640_450_80gray_s_c1_center_top.jpg" alt = "<%= x['artist']['text'] %>" style = "height:150px">
+	  					</td>
+	  					<td colspan=3><p align = "left"><h5><strong>&nbsp;&nbsp;<%= x['artist']['text'] %></strong></h5></p>
+	  					</td>
+	  				</tr>
+	  				<tr class='active'>
+	  						<% artisturl = (x['artist']['href']) %>
+	  					<td colspan=3><p align = "left">&nbsp;&nbsp;<%= RestClient.get(artisturl).partition("content-body expandable\">          <p>")[2][0..300]  %></p>
+	  					</td><br>
+	  				</tr>
+	  			</tbody>
+
+	  	<% end %>
+	  <% end %>
+		
+	</table>
+</div>
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Bootstrap! from http://getbootstrap.com/getting-started/ -->
+  <!-- put your Bootstrap CSS links above the stylesheet_link_tag -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- put your Bootstrap Javacsript link below the javascript_include_tag -->
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+<body class="container">
+
+	  <div class='pull-right'>
+      Today is <%= @weekday %>, <%= @header_today %>  |  <%= @time %>
+  	</div>
+
+  <h2><%= link_to 'Stages.', '/' %><br><br></h2>
+
+<div class = "center-block">
+	<div class="row">
+	  <div class="col-xs-12 col-sm-4 col-md-2"><a href="/stageOne" class="btn btn-primary btn-block btn-sm" role="button"><strong>SASQUATCH<br>STAGE</strong></a></div>
+	  <div class="col-xs-12 col-sm-4 col-md-2"><a href="/stageTwo" class="btn btn-primary btn-block btn-sm" role="button"><strong>BIGFOOT<br>STAGE</strong></a></div>
+	  <div class="col-xs-12 col-sm-4 col-md-2"><a href="/stageThree" class="btn btn-primary btn-block btn-sm" role="button"><strong>EL<br>CHUPACABRA</strong></a></div>
+	  <div class="col-xs-12 col-sm-4 col-md-2"><a href="/stageFour" class="btn btn-primary btn-block btn-sm" role="button"><strong>YETI<br>STAGE</strong></a></div>
+	  <div class="col-xs-12 col-sm-4 col-md-2"><a href="/stageFive" class="btn btn-primary btn-block btn-sm" role="button"><strong>NARWHAL<br>STAGE</strong></a></div>
+	</div>
+</div>
+<%= yield %>
+</body>
+
+<footer class='site-footer'>
+	<div class = 'pull-right'>
+		<br><br><h4><a href= '/allStages'>Want to see everyone, everywhere?</a></h4>
+	</div>
+
+</footer>
+
+</html>
