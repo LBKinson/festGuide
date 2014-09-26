@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
 		# query = params[]
 		url = "https://www.kimonolabs.com/api/97180122?apikey=EG6ZDD7nj9yFR4lFDF8OWVw6Ch9bVbo0"
    	@response = HTTParty.get( url )['results']['collection1']
+
   end 
 
   def wiki
